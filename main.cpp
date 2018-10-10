@@ -203,31 +203,35 @@ int main()
         cin>>x;
         if(x==1)
         {
-            char day[3],month[3],year[5];
-            cout<<"Now Enter the date in the Following Format 'Date/Month/Year'"<<endl;
-            cin.get(day,4,'/');
-            cin.ignore(100,'/');
-            cin.get(month,4,'/');
-            cin.ignore(100,'/');
-            cin.get(year,5);
-            //convert them to int
-            int a,b,c;
-            a=atoi(day);
-            b=atoi(month);
-            c=atoi(year);
+            int a, b, c;
+            do {
+                char day[3], month[3], year[5];
+                cout << "Now Enter the date in the Following Format 'Date/Month/Year'" << endl;
+                cin.get(day, 4, '/');
+                cin.ignore(100, '/');
+                cin.get(month, 4, '/');
+                cin.ignore(100, '/');
+                cin.get(year, 5);
+                //convert them to int
+                a = atoi(day);
+                b = atoi(month);
+                c = atoi(year);
+            }while(a>31 || a<1 || b>12 || b<1 && cout<<endl<<"Try Again with Better Values");
             output(a,b,c);
         }
         else if(x==2)
         {
-            char day[3],month[3],year[5];
-            cout<<"Now Enter the date in the Following Format 'Month/Year'"<<endl;
-            cin.get(month,4,'/');
-            cin.ignore(100,'/');
-            cin.get(year,5);
-            //convert them to int
-            int b,c;
-            b=atoi(month);
-            c=atoi(year);
+            int b, c;
+            do {
+                char day[3], month[3], year[5];
+                cout << "Now Enter the date in the Following Format 'Month/Year'" << endl;
+                cin.get(month, 4, '/');
+                cin.ignore(100, '/');
+                cin.get(year, 5);
+                //convert them to int
+                b = atoi(month);
+                c = atoi(year);
+            } while(b>12 || b<1 && cout<<endl<<"Try Again with Better Values");
             calendar(b,c);
         }
         else if(x==3)
